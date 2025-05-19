@@ -1,0 +1,193 @@
+/*
+
+本人博客园(cnblog)主页：https://www.cnblogs.com/gulfieen-n0rris
+
+我是重度sass用户，导致现在写纯css有点蹩脚（包括写老喜欢嵌套标签和双斜杠注释）。
+不过我记得MDN讲现在的css可以使用标签嵌套了，只不过好像目前的博客园的css标准不支持这个特性。
+我自己也是dark-mode爱好者，所以基于博客园自带的LuxInteriorDark主题修改了一番。
+
+想要这个就直接拿去修改（如果你觉得我的css有实用价值的话），注意这个不能禁用模板css，因为是基于上述的主题自定义的。
+
+*/
+
+/* ----------动画部分--------- */
+
+@keyframes elementsHover {
+    0%,100% {border-color: #2bad1a;}
+    15%,25%,35%,65% {border-color: #2bad1a;}
+    20%,30%,45%,75% {border-color: #285714;}
+}
+
+@keyframes elementsOutHover {
+    from{border-color: #2bad1a;}
+    to{border-color: #285714;}
+}
+
+/* -----------css部分----------- */
+
+
+
+/*
+    0x00：全局css
+*/
+
+html {
+    font-family: Consolas;
+    border-color: #2bad1a;
+    transform-origin: center center;
+}
+
+body {
+    transition: all ease-out .35s;
+    color: #2a861e;
+}
+
+a {
+    color: #2bad1a;
+}
+
+
+
+/* -----------分割线----------- */
+
+
+
+/*
+    0x01：顶部banner
+*/
+
+.navbar-custom {
+    /*
+        建议不要直接操作tag #top_nav
+        我设置了点状纹理，觉得密恐可以删掉(>.<)
+    */
+    display: flex;
+    background-color: transparent;
+    background-image: radial-gradient(#285714 60%, transparent 0.5px),
+        radial-gradient(#142857, transparent 1px);
+    background-size: 4px 4px;
+    backdrop-filter: blur(2px);
+    mask: linear-gradient(#142857 60%, #285714 100%);
+    opacity: 0.85;
+}
+
+.navbar-custom #nav_main {
+    color: #2bad1a;
+}
+
+/* 左边部分：一些链接和cnblogs-Logo */
+
+#nav_main #nav_left {
+    /**/
+}
+
+#nav_left li{
+    /* 除了logo部分的链接表 */
+    display: none;
+}
+.navbar-custom #nav_main #nav_left li.navbar-branding{
+    /* logo部分的链接用了单独的classname */
+    display: flex;
+    width: 6rem;
+}
+
+/* 右边部分：搜索、写随笔、我的博客、短消息、简洁模式、头像 */
+
+#nav_right {
+    /**/
+}
+
+#nav_right li{
+    /**/
+}
+
+#zzk_search {
+    border: 2px #2bad1a solid;
+    background-color: #113c0b;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 12px;
+    height: 2.5em;
+}
+
+#zzk_search :hover{
+    animation: elementsHover .35s linear forwards;
+}
+#zzk_search :not(:hover){
+    animation: elementsOutHover .35s ease-out forwards;
+}
+
+#zzk_search_input {
+    /**/
+}
+
+#zzk_search_button {
+    /**/
+}
+
+#zzk_search_button img {
+    height: 1.4rem;
+}
+
+#navbar_search_options {
+    /**/
+}
+
+.navbar-list {
+    /**/
+}
+
+li#navbar_login_status{
+    /**/
+}
+
+
+
+/* -----------分割线----------- */
+
+@media only screen and (max-width: 767px){
+    /**/
+}
+
+/*
+    主干部分
+*/
+
+#container {
+    border: 2px dashed #2a861e;
+    border-radius: 6px;
+    background-color: #142857;
+}
+
+#container #header {
+    /**/
+}
+
+#header #top {
+    /**/
+}
+
+#header #nacstats {
+    /**/
+}
+
+#header #nav {
+    /**/
+}
+
+#clr {
+    /**/
+}
+
+#sider-a {
+    /**/
+}
+
+#container #content {
+    /**/
+}
+
+#container #footer {
+    /**/
+}
